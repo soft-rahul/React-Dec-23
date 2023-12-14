@@ -1,0 +1,22 @@
+{
+  "name": "reactboy",
+  "version": "1.0.0",
+  "description": "This is react best project learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soft-rahul/React-Dec-23.git"
+  },
+  "author": "soft-rahul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soft-rahul/React-Dec-23/issues"
+  },
+  "homepage": "https://github.com/soft-rahul/React-Dec-23#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
