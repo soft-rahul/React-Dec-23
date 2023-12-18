@@ -18,3 +18,34 @@ Package.json file is a configuration file for NPM
     each dependency's exact version, hash number and other details
 
 4). Transitive dependency or Dependency Tree
+
+5). NPX Parcel index.html
+    When we want to execute NPM package with or without installing it 
+    then we use NPX 
+
+6). Browser scripts cannot have import and export statements
+
+7). Functions of Bundler - Parcel
+    - Dev build
+    - Local Server
+    - HMR -> Hot Module Replacement
+    Hot Module Replacement (HMR) is a feature in web bundlers that allows developers to update modules in a running application without reloading the page. 
+    - File Watching Algo 
+    - Caching
+    - Image optimization
+    - Compression
+    - Bundling
+    - Consistent Hashing?
+    - code splitting
+    - Differential bundling - supporting old Browsers
+    - Error Handling
+    - Https
+    - Tree Shaking - remove unused code
+    - Different build for dev and prod
+    `
+        npx parcel build index.html
+        will get an error -> remove main property for package.json
+    `
+
+8). what is browserlist in package.json?
+    Add Your target Browser list here.
