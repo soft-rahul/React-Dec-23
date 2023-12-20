@@ -28,5 +28,8 @@
   3). camelCase all most of the things! 
 
 
-# JavaScript in JSX with Curly Braces
-## Passing strings with quotes
+# React Element 
+## We can create a react element using 
+ - React.createElement()
+ - JSX 
+# JSX Behind the scene is calling React.createElement() for creating react elements.
