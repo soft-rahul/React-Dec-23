@@ -25,7 +25,7 @@
 ## Rules of JSX
   1). Return a single root element
   2). Close all the tags
-  3). camelCase all most of the things! 
+  3). camelCase  most of the things! 
 
 
 # React Element 
@@ -33,3 +33,6 @@
  - React.createElement()
  - JSX 
 # JSX Behind the scene is calling React.createElement() for creating react elements.
+
+## What is component composition?
+<p> Nesting components inside each other is known as component composition </p>
