@@ -36,3 +36,11 @@
 
 ## What is component composition?
 <p> Nesting components inside each other is known as component composition </p>
+
+### Javascript inside JSX
+we the help of {} curly braces we can write any kind of js code inside our JSX code.
+
+### Infinite call of Component
+
+### Cross site scripting
+JSX prevents XSS attacks.
