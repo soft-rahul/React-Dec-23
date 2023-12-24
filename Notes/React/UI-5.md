@@ -223,3 +223,7 @@ But parentheses make the code more readable, so we recommend using them.
 ## Multiple <code> ?: </code>
 
 # Optional Chaining
+
+Optional chaining is a safe and concise way to perform access checks for nested object properties.
+
+The optional chaining operator ?. takes the reference to its left and checks if it is undefined or null. If the reference is either of these nullish values, the checks will stop and return undefined. Otherwise, the chain of access checks will continue down the happy path to the final value.
