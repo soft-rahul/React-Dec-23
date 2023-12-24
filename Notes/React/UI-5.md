@@ -187,3 +187,39 @@ In practice, the zero height is often a valid value, that shouldn’t be replace
 #### The precedence of the ?? operator is the same as ||. They both equal 3 in the MDN table.
 
 That means that, just like ||, the nullish coalescing operator ?? is evaluated before = and ?, but after most other operations, such as +, *.
+
+# Ternary Operator <code> ? : </code>
+
+The operator is represented by a question mark ?. Sometimes it’s called “ternary”, because the operator has three operands. It is actually the one and only operator in JavaScript which has that many.
+
+The syntax is:
+<pre>
+<code>
+let result = condition ? value1 : value2;
+</code>
+</pre>
+The condition is evaluated: if it’s truthy then value1 is returned, otherwise – value2.
+
+For example:
+
+<pre>
+<code>
+let accessAllowed = (age > 18) ? true : false;
+</code>
+</pre>
+
+Technically, we can omit the parentheses around age > 18. The question mark operator has a low precedence, so it executes after the comparison >.
+
+This example will do the same thing as the previous one:
+<pre>
+<code>
+// the comparison operator "age > 18" executes first anyway
+// (no need to wrap it into parentheses)
+let accessAllowed = age > 18 ? true : false;
+</code>
+</pre>
+But parentheses make the code more readable, so we recommend using them.
+
+## Multiple <code> ?: </code>
+
+# Optional Chaining
