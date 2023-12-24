@@ -81,3 +81,109 @@ false || alert("printed");
 In the first line, the OR || operator stops the evaluation immediately upon seeing true, so the alert isn’t run.
 
 Sometimes, people use this feature to execute commands only if the condition on the left part is falsy.
+
+### <code> && </code> (AND)
+
+In classical programming, AND returns true if both operands are truthy and false otherwise:
+
+<pre>
+<code>
+alert( true && true );   // true
+alert( false && true );  // false
+alert( true && false );  // false
+alert( false && false ); // false
+</code>
+</pre>
+
+### AND “&&” finds the first falsy value
+
+Given multiple AND’ed values:
+<pre>
+<code>
+result = value1 && value2 && value3;
+</code>
+</pre>
+
+The AND && operator does the following:
+
+- Evaluates operands from left to right.
+- For each operand, converts it to a boolean. If the result is false, stops and returns the original value of that operand.
+- If all operands have been evaluated (i.e. all were truthy), returns the last operand.
+  
+In other words, AND returns the first falsy value or the last value if none were found.
+
+The rules above are similar to OR. The difference is that AND returns the first falsy value while OR returns the first truthy one.
+
+
+### Precedence of AND && is higher than OR ||
+The precedence of AND && operator is higher than OR ||.
+
+<code>
+
+So the code a && b || c && d is essentially the same as if the && expressions were in parentheses: (a && b) || (c && d).
+</code>
+
+
+## <code> ! </code> (NOT)
+
+The boolean NOT operator is represented with an exclamation sign !.
+
+The syntax is pretty simple:
+<pre><code>
+result = !value;
+</code> </pre>
+
+The operator accepts a <b> single argument </b> and does the following:
+
+- Converts the operand to boolean type: true/false.
+- Returns the inverse value.
+
+#### A double NOT !! is sometimes used for converting a value to boolean type
+
+### The precedence of NOT ! is the highest of all logical operators, so it always executes first, before && or ||.
+
+
+### <code> ?? </code> (Nullish Operator)
+
+The nullish coalescing operator is written as two question marks ??.
+
+As it treats null and undefined similarly, we’ll use a special term here, in this article. For brevity, we’ll say that a value is “defined” when it’s neither null nor undefined.
+
+The result of a ?? b is:
+
+if a is defined, then a,
+if a isn’t defined, then b.
+In other words, ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
+
+
+## Comparison with <code> || (OR) </code>
+
+The important difference between them is that:
+
+- || returns the first truthy value.
+- ?? returns the first defined value.
+  
+In other words, || doesn’t distinguish between false, 0, an empty string "" and null/undefined. They are all the same – falsy values. If any of these is the first argument of ||, then we’ll get the second argument as the result.
+
+In practice though, we may want to use default value only when the variable is null/undefined. That is, when the value is really unknown/not set.
+
+For example, consider this:
+<pre>
+<code>
+let height = 0;
+
+alert(height || 100); // 100
+alert(height ?? 100); // 0
+</code>
+</pre>
+
+The height || 100 checks height for being a falsy value, and it’s 0, falsy indeed.
+so the result of || is the second argument, 100.
+The height ?? 100 checks height for being null/undefined, and it’s not,
+so the result is height “as is”, that is 0.
+In practice, the zero height is often a valid value, that shouldn’t be replaced with the default. So ?? does just the right thing.
+
+
+#### The precedence of the ?? operator is the same as ||. They both equal 3 in the MDN table.
+
+That means that, just like ||, the nullish coalescing operator ?? is evaluated before = and ?, but after most other operations, such as +, *.
