@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-
 // This is a react element
 const title = React.createElement(
   "h1",
@@ -22,4 +21,4 @@ const Heading = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Heading></Heading>);
+root.render([<h1>First Element</h1>, <h2> Second Element</h2>]);
