@@ -2,7 +2,7 @@
 
 ## Array Methods for List
 
-#### Array.prototype.map()
+### Array.prototype.map()
 The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
 
 ![Image](images/Screenshot%20(523).png)
@@ -111,3 +111,72 @@ const productsWithPrice = products.map((product) => {
 
 </code>
 </pre>
+
+
+### Array.prototype.filter()
+The filter() method of Array instances creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function
+
+![](images/Screenshot%20(526).png)
+
+#### Syntax
+<pre>
+<code>
+filter(callbackFn)
+filter(callbackFn, thisArg)
+</code>
+</pre>
+
+#### Parameters
+<code> callbackFn </code>
+A function to execute for each element in the array. It should return a <b> truthy value </b> to keep the element in the resulting array, and a <b> falsy value </b> otherwise. The function is called with the following arguments:
+
+<code>element  </code>
+The current element being processed in the array.
+
+ <code> index </code>
+The index of the current element being processed in the array.
+
+<code> array </code>
+The array filter() was called upon.
+
+<code> this (optional) </code>
+A value to use as this when executing callbackFn. 
+
+#### Return value
+A shallow copy of the given array containing just the elements that pass the test. If no elements pass the test, an empty array is returned.
+
+
+### Array.prototype.reduce()
+The reduce() method of Array instances executes a user-supplied <b>"reducer" </b>callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+
+The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+
+
+#### Syntax
+<pre>
+<code>
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
+</code>
+</pre>
+
+#### Parameters
+<code> callbackFn </code>
+A function to execute for each element in the array. Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn. For the last invocation, the return value becomes the return value of reduce(). The function is called with the following arguments:
+
+<code>accumulator  </code>
+The value resulting from the previous call to callbackFn. On the first call, its value is initialValue if the latter is specified; otherwise its value is array[0].
+
+ <code> current Value </code>
+The value of the current element. On the first call, its value is array[0] if initialValue is specified; otherwise its value is array[1].
+
+<code> current Index </code>
+The index position of currentValue in the array. On the first call, its value is 0 if initialValue is specified, otherwise 1.
+<code> array </code>
+The array reduce() was called upon.
+
+<code> initialValue </code>
+A value to which accumulator is initialized the first time the callback is called. If initialValue is specified, callbackFn starts executing with the first value in the array as currentValue. If initialValue is not specified, accumulator is initialized to the first value in the array, and callbackFn starts executing with the second value in the array as currentValue. In this case, if the array is empty (so that there's no first value to return as accumulator), an error is thrown..
+
+#### Return value
+The value that results from running the "reducer" callback function to completion over the entire array.
