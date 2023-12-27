@@ -214,3 +214,33 @@ Similarly, do not generate keys on the fly, e.g. with key={Math.random()}. This 
 Note that your components won’t receive key as a prop. It’s only used as a hint by React itself. If your component needs an ID, you have to pass it as a separate prop: < Profile key={id} userId={id} />.
 
 </code>
+
+
+# Keys in Depth
+If the list were to change, one of two things should happen:
+
+* we completely re-render the entire list, or:
+* we hunt down the specific items that were changed and only re-render those.
+Assuming we want to hunt down that one specific item that was changed and NOT re-render the entire list. We need something to track that specific item. We can track down a specific item by using a key.
+
+When the list is updated for whatever reason, (either from a server or a user interaction), React matches the keys of each of the previous list to the updated list. If there were any changes, React will only update the items that have changed.
+
+As long as keys remain consistent and unique, React can handle the DOM effectively and efficiently.
+
+## Using keys
+Keys are passed into the component or a DOM element as a prop. You should already be familiar with the syntax.
+
+<pre>
+<code>
+< Component key={keyValue} />
+//or
+< div key={keyValue} />
+</code>
+</pre>
+
+## Keys anti-pattern
+* Keys are straightforward to use, though there is an anti-pattern you should be aware of. Keys should never be generated on the fly. Using key={Math.random()} or key={uuid()} while rendering the list defeats the purpose of the list.
+
+* using index as a key
+  ![](images/Screenshot%20(530).png)
+  ![](images/Screenshot%20(531).png)
