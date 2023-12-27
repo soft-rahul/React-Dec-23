@@ -180,3 +180,37 @@ A value to which accumulator is initialized the first time the callback is calle
 
 #### Return value
 The value that results from running the "reducer" callback function to completion over the entire array.
+
+
+## Rendering List
+### Keeping list items in order with key
+
+You need to give each array item a key — a string or a number that uniquely identifies it among other items in that array:
+<pre>
+<code> < li key={person.id}>...</> </code>
+</pre>
+
+![](images/Screenshot%20(529).png)
+
+
+### Where to get your key 
+Different sources of data provide different sources of keys:
+
+* Data from a database: If your data is coming from a database, you can use the database keys/IDs, which are unique by nature.
+* Locally generated data: If your data is generated and persisted locally (e.g. notes in a note-taking app), use an incrementing counter, crypto.randomUUID() or a package like uuid when creating items.
+
+
+### Rules of keys 
+* Keys must be unique among siblings. However, it’s okay to use the same keys for JSX nodes in different arrays.
+* Keys must not change or that defeats their purpose! Don’t generate them while rendering.
+
+
+<code>
+
+You might be tempted to use an item’s index in the array as its key. In fact, that’s what React will use if you don’t specify a key at all. But the order in which you render items will change over time if an item is inserted, deleted, or if the array gets reordered. Index as a key often leads to subtle and confusing bugs.
+
+Similarly, do not generate keys on the fly, e.g. with key={Math.random()}. This will cause keys to never match up between renders, leading to all your components and DOM being recreated every time. Not only is this slow, but it will also lose any user input inside the list items. Instead, use a stable ID based on the data.
+
+Note that your components won’t receive key as a prop. It’s only used as a hint by React itself. If your component needs an ID, you have to pass it as a separate prop: < Profile key={id} userId={id} />.
+
+</code>
