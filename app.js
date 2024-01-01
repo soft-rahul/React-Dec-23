@@ -14,11 +14,11 @@ const addNumbers = (n1, n2) => n1 + n2;
 const Heading = () => {
   return (
     <div className="container">
-      <h1>Welcome to React {addNumbers(10, 999)}</h1>
+      <h1>Welcome to React {''}</h1>
     </div>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render([<h1>First Element</h1>, <h2> Second Element</h2>]);
+root.render(<Heading/>);
