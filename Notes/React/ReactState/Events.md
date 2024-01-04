@@ -32,3 +32,8 @@ When an event happens on an element, it first runs the handlers on it, then on i
 
 #### special case
 ![Alt text](image-5.png)
+
+## Event Capturing
+![Alt text](image-6.png)
+
+![Alt text](image-7.png)
