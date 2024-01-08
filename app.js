@@ -1,4 +1,5 @@
 import React from "react";
+import { DATA } from "./constant";
 import ReactDOM from "react-dom/client";
 
 /*
@@ -15,6 +16,43 @@ import ReactDOM from "react-dom/client";
     - Address
     - Contact
 */
+
+const RestaurantCard = ({ name, imageUrl, rating }) => {
+  return (
+    <div className="res-card">
+      <div className="res-visual">
+        <img src={imageUrl} alt="res-logo" />
+      </div>
+      <div className="res-info">
+        <h3>{name}</h3>
+        <h4>Indian, south Indian, chinese, etc</h4>
+        <h4>{rating}</h4>
+        <h4>EST 30 minutes</h4>
+      </div>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <main className="body">
+      <div className="searchBar">Search</div>
+      <div className="res-container">
+        {DATA.map((res) => {
+          console.log(res?.info);
+          return (
+            <RestaurantCard
+              key={res?.info?.resId}
+              name={res?.info?.name}
+              imageUrl={res?.info?.image?.url}
+              rating={res?.info?.rating?.rating_text}
+            />
+          );
+        })}
+      </div>
+    </main>
+  );
+};
 
 const Header = () => {
   return (
@@ -41,6 +79,7 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
+      <Body />
     </div>
   );
 };
