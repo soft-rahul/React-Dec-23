@@ -78,3 +78,8 @@ It forms a virtual DOM instead 💡
 </pre>
 
 ReactDOM, in turn, ignores fragments and renders all children without any wrappers.
+
+
+## What is React Fiber?
+
+React Fiber is an internal engine change geared to make React faster and smarter. The Fiber reconciler, which became the default reconciler for React 16 and above, is a complete rewrite of React’s reconciliation algorithm to solve some long-standing issues in React.
