@@ -1,0 +1,2 @@
+set AUTH_TOKEN=ohd555j7tjwAfjeEwkr7bfw3dertop
+npm run generategql
