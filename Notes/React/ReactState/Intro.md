@@ -22,3 +22,11 @@ Yes, you heard that right: destroyed. This includes the variables, functions, an
 
 ## Rerendering  
 ![Alt text](image-1.png)
+
+
+## Hooks
+
+Hooks are functions that let you use React features. All hooks are recognizable by the **use** prefix. For example, useState is a hook. We’ll use more of these as we get further into the course. For now, remember that hooks have rules that we need to abide by:
+
+* Hooks can only be called from the top level of a functional component.
+* Hooks can’t be called from inside loops or conditions.
