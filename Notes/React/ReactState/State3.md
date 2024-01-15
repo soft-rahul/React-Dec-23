@@ -14,6 +14,13 @@
 ## Recap
 ![Alt text](image-18.png)
 
+## useState 
+![Alt text](image-21.png)
+
+## useState with same State value
+![Alt text](image-22.png)
+
+![Alt text](image-23.png)
 
 # React Docs
 
