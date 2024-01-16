@@ -54,3 +54,14 @@ console.log('B is', b); // 10
 
 ### Tip 5
 ![Alt text](image-6.png)
+
+## Object Destructuring
+
+The destructuring assignment also works with object
+
+![Alt text](image-7.png)
+
+### Nested Destructuring
+If an object or an array contain other nested objects and arrays, we can use more complex left-side patterns to extract deeper portions.
+
+![Alt text](image-8.png)
