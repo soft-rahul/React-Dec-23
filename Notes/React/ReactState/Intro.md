@@ -20,7 +20,7 @@ Yes, you heard that right: destroyed. This includes the variables, functions, an
 
 ![Alt text](image.png)
 
-## Rerendering  
+## Re-rendering  
 ![Alt text](image-1.png)
 
 
