@@ -50,10 +50,40 @@
 // name = 'something else';
 // console.log(name, otherBookDetails);
 
-let one, two, three;
-const numbers = {
-  one: 1,
-  two: 2,
-  three: 3,
-};
-({ one, two, three } = { one: 1, two: 2, three: 3 });
+// let one, two, three;
+// const numbers = {
+//   one: 1,
+//   two: 2,
+//   three: 3,
+// };
+// ({ one, two, three } = { one: 1, two: 2, three: 3 });
+
+// How many ways to swap values
+let a = 1;
+let b = 2;
+
+// 1. using temp var
+// let temp = a;
+// a = b;
+// b = temp;
+
+// 2. using XOR op
+
+// a = a ^ b;
+
+// b = a ^ b;
+
+// a = a ^ b;
+
+// 3. using Sum and Difference
+
+// a = a + b;
+
+// b = a - b;
+
+// a = a - b;
+
+// 4. using array Destructing
+[b,a] =  [a,b];
+
+console.log(a, b);
