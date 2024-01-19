@@ -1,12 +1,26 @@
+import { useState } from "react";
 import { DATA } from "../Constant/restData";
 import RestaurantCard from "./RestaurantCard";
 
 const Body = () => {
+  const [value, setValue] = useState(DATA);
+  const clickHandler = () => {
+    const topRatedRestaurants = value
+      .filter((valueItem) => Number(valueItem?.info?.rating?.rating_text) >= 4)
+      .sort(
+        (a, b) =>
+          Number(b.info.rating.rating_text) - Number(a.info.rating.rating_text)
+      );
+    setValue(topRatedRestaurants);
+  };
   return (
     <main className="body">
-      <div className="searchBar">Search</div>
+      <div className="functionality">
+        <div className="searchBar">Search</div>
+        <button onClick={clickHandler}> Top Restaurants </button>
+      </div>
       <div className="res-container">
-        {DATA.map((res) => {
+        {value.map((res) => {
           return (
             <RestaurantCard
               key={res?.info?.resId}
