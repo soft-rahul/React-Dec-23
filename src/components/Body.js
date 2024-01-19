@@ -7,7 +7,6 @@ const Body = () => {
       <div className="searchBar">Search</div>
       <div className="res-container">
         {DATA.map((res) => {
-          console.log(res?.info);
           return (
             <RestaurantCard
               key={res?.info?.resId}

@@ -1,3 +1,4 @@
+export const LOGO_URL = "https://cdn.logojoy.com/wp-content/uploads/2018/05/01105934/1855.png";
 export const DATA =  [
     {
         "type": "restaurant",
