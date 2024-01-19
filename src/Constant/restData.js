@@ -1766,4 +1766,4 @@ export const DATA =  [
             }
         ]
     }
-],
+];
