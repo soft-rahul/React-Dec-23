@@ -3,20 +3,6 @@ import Body from "./components/Body";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 
-/*
-  Heading
-    - Logo
-    - Menu
-  Body
-    - Search Bar
-    - RestaurantList
-      - Restaurant Card
-  Footer
-    - Copyright 
-    - Links
-    - Address
-    - Contact
-*/
 
 const AppLayout = () => {
   return (
