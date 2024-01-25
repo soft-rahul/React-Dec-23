@@ -93,3 +93,26 @@ h4 {
   background: #faaf18;
   color: #fff;
 }
+
+.shimmer-container {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.shimmer-card {
+  background: #f1f1f1;
+  border: 1px solid #f8f8f8;
+  width: 200px;
+  height: 400px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}

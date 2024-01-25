@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DATA } from "../Constant/restData";
 import RestaurantCard from "./RestaurantCard";
+import ShimmerUI from "./Shimmer/ShimmerUI";
 
 const Body = () => {
   const [value, setValue] = useState(DATA);
+  const [showShimmer, setShowShimmer] = useState(true);
   const clickHandler = () => {
     const topRatedRestaurants = value
       .filter((valueItem) => Number(valueItem?.info?.rating?.rating_text) >= 4)
@@ -13,6 +15,18 @@ const Body = () => {
       );
     setValue(topRatedRestaurants);
   };
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setShowShimmer(!showShimmer);
+    }, 2000);
+
+    return () => {
+      clearTimeout(id);
+    }
+  }, [])
+  if (showShimmer) {
+    return <ShimmerUI />
+  }
   return (
     <main className="body">
       <div className="functionality">
