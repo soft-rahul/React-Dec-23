@@ -5,7 +5,19 @@ import ShimmerUI from "./Shimmer/ShimmerUI";
 
 const Body = () => {
   const [value, setValue] = useState(DATA);
+  const [filteredData, setFilteredData] = useState(DATA);
+  const [searchText, setSearchText] = useState("");
   const [showShimmer, setShowShimmer] = useState(true);
+
+  const inputHandler = (e) => {
+    setSearchText(e.target.value);
+  }
+
+  const handleSearchClick = () => {
+    const searchResult = value.filter(res => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()))
+    setFilteredData(searchResult);
+  }
+
   const clickHandler = () => {
     const topRatedRestaurants = value
       .filter((valueItem) => Number(valueItem?.info?.rating?.rating_text) >= 4)
@@ -15,6 +27,7 @@ const Body = () => {
       );
     setValue(topRatedRestaurants);
   };
+
   useEffect(() => {
     const id = setTimeout(() => {
       setShowShimmer(!showShimmer);
@@ -24,17 +37,21 @@ const Body = () => {
       clearTimeout(id);
     }
   }, [])
+  
   if (showShimmer) {
     return <ShimmerUI />
   }
   return (
     <main className="body">
       <div className="functionality">
-        <div className="searchBar">Search</div>
+        <div className="searchBar">
+          <input type="text" name="searchQuery" value={searchText} onChange={inputHandler} />
+          <button onClick={handleSearchClick}> Search </button>
+        </div>
         <button onClick={clickHandler}> Top Restaurants </button>
       </div>
       <div className="res-container">
-        {value.map((res) => {
+        {filteredData.map((res) => {
           return (
             <RestaurantCard
               key={res?.info?.resId}
