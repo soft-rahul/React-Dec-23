@@ -1,19 +1,48 @@
 import React from "react";
-import Body from "./components/Body";
+import About from "./components/About";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import ErrorPage from "./components/ErrorPage";
+import Contacts from "./components/Contacts";
+import Home from "./components/Home";
 
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <AppLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: 'about',
+        element: <About />
+      },
+      {
+        path: 'contacts',
+        element: <Contacts />
+      }
+    ]
+  },
+
+]);
+
+console.log(appRouter, 'app router');
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
