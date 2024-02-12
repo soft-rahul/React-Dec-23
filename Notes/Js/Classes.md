@@ -16,4 +16,5 @@ There are two kinds of object properties.
 
 * The second type of property is something new. It’s an accessor property. They are essentially functions that execute on getting and setting a value, but look like regular properties to an external code.
 ![alt text](image-9.png)
-![alt text](image-8.png)
+
+## Intro - Classes in Javascript
