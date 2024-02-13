@@ -41,7 +41,6 @@ const appRouter = createBrowserRouter([
 
 ]);
 
-console.log(appRouter, 'app router');
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
