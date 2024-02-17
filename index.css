@@ -64,11 +64,16 @@ body {
   flex: 1;
 }
 
+.res-visual {
+  height: 180px;
+  width: 100%;
+}
+
 .res-visual img {
-  max-width: 100%;
-  height: 150px;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
-  border-radius: 1em;
+  border-radius: 1em 1em 0 0;
 }
 
 .res-info h3,

@@ -2,7 +2,7 @@ const RestaurantCard = ({ name, imageUrl, rating }) => {
   return (
     <div className="res-card">
       <div className="res-visual">
-        <img src={imageUrl} alt="res-logo" />
+        <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${imageUrl}`} alt={`${name}`} />
       </div>
       <div className="res-info">
         <h3>{name}</h3>
