@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../Constant/restData";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerUI from "./Shimmer/ShimmerUI";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [realData, setReadData] = useState([]);
@@ -23,10 +24,7 @@ const Body = () => {
   const clickHandler = () => {
     const topRatedRestaurants = realData
       .filter((valueItem) => Number(valueItem?.info?.avgRating) >= 4)
-      .sort(
-        (a, b) =>
-          Number(b.info.avgRating) - Number(a.info.avgRating)
-      );
+      .sort((a, b) => Number(b.info.avgRating) - Number(a.info.avgRating));
     setFilteredData(topRatedRestaurants);
   };
 
@@ -35,13 +33,19 @@ const Body = () => {
       try {
         const response = await fetch(API_URL);
         const foodData = await response.json();
-        setReadData(foodData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredData(foodData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setReadData(
+          foodData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+        setFilteredData(
+          foodData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
         setShowShimmer(false);
       } catch {
-        console.log(err, 'Error');
+        console.log(err, "Error");
       }
-    }
+    };
     fetchInfo();
   }, []);
 
@@ -63,13 +67,19 @@ const Body = () => {
         <button onClick={clickHandler}> Top Restaurants </button>
       </div>
       <div className="res-container">
-        {
-          filteredData.map(data => {
-            return <RestaurantCard key={data?.info?.id} name={data?.info?.name} imageUrl={data?.info?.cloudinaryImageId} rating={data?.info?.
-              avgRating
-            } />
-          })
-        }
+        {filteredData.map((data) => {
+          return (
+            <Link to={`/restaurant/${data?.info?.id}`}>
+              <RestaurantCard
+                key={data?.info?.id}
+                name={data?.info?.name}
+                imageUrl={data?.info?.cloudinaryImageId}
+                cuisines={data?.info?.cuisines}
+                rating={data?.info?.avgRating}
+              />
+            </Link>
+          );
+        })}
       </div>
     </main>
   );

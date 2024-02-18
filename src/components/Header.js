@@ -1,16 +1,32 @@
 import { LOGO_URL } from "../Constant/restData";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img src={LOGO_URL} alt="" />
+        <Link to="/">
+          {" "}
+          <img src={LOGO_URL} alt="" />{" "}
+        </Link>
       </div>
       <div className="menu">
         <ul className="menu-items">
-          <li> <a href="/"> Home </a> </li>
-          <li> <a href="/about">About us</a> </li>
-          <li>Contact us</li>
-          <li>Cart</li>
+          <li>
+            {" "}
+            <Link to="/"> Home </Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/about">About us </Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/contacts"> Contact Us</Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/cart"> Cart </Link>{" "}
+          </li>
         </ul>
       </div>
     </header>
