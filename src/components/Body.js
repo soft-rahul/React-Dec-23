@@ -42,7 +42,7 @@ const Body = () => {
             ?.restaurants
         );
         setShowShimmer(false);
-      } catch {
+      } catch(err) {
         console.log(err, "Error");
       }
     };
