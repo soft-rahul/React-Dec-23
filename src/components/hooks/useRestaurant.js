@@ -9,7 +9,6 @@ const useRestaurant = (id) => {
         const response = await fetch(`${API_MORE_DETAILS}${id}`);
         const moreDetails = await response.json();
         setResDetails(moreDetails?.data);
-        console.log(moreDetails?.data, "log");
       } catch (err) {
         setResDetails({});
         console.log(err, "more err");
